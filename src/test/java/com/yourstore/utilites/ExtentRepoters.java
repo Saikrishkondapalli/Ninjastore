@@ -6,14 +6,15 @@ import java.io.IOException;
 import java.util.Properties;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.yourstore.base.Baseclass;
 
-public class extentReports extends Baseclass {
+public class ExtentRepoters  extends Baseclass {
 	public static ExtentReports genrateExtentReport()   {
 		ExtentReports extentReport =new ExtentReports();
-		File extentReportFile=new File(System.getProperty("user.dir")+"\\test-output\\ExtentReports\\extentReport.html");
+		File extentReportFile=new File(System.getProperty("user.dir")+".//test-output/extentreports/extentreports.html");
 		ExtentHtmlReporter  html=new ExtentHtmlReporter(extentReportFile);
 		html.config().setTheme( Theme.DARK);
 		html.config().setReportName("Ninja Project Test Results");
@@ -21,7 +22,7 @@ public class extentReports extends Baseclass {
 		html.config().setTimeStampFormat("dd/MM/yyyy hh:mm:ss");
 		extentReport.attachReporter(html);
 		Properties congfigPro=new Properties();
-		File configPropFile=new File (System.getProperty("user.dir")+".//src/main/java/com/Ninja/Config/config.properties");
+		File configPropFile=new File (System.getProperty("user.dir")+".//src/test/java/com/yourstore/config/config.properties");
 		
 		
 		try {
@@ -44,3 +45,6 @@ public class extentReports extends Baseclass {
 	}
 
 }
+ 
+
+

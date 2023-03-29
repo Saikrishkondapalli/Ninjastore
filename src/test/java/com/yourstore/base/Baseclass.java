@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -27,6 +28,7 @@ public class Baseclass {
 
 	@BeforeSuite
 	public static void launchApplication() {
+		DOMConfigurator.configure("log4j.xml");
 		pro = new Properties();
 		File proFile = new File(System.getProperty("user.dir") + ".//src/test/java/com/yourstore/config/config.properties");
 		dataPro = new Properties();
